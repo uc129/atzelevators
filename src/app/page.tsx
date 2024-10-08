@@ -1,6 +1,5 @@
 /** @format */
 "use client";
-import HeroBanner from "./components/banner";
 import SearchBox from "./components/search";
 import ProductCard from "./components/products/card";
 import { ProductsDetail } from "./constants/products";
@@ -18,10 +17,8 @@ import AllProductsScroller from "./components/products/allProducts";
 import SvgMap from "./components/branches/map";
 import { scrollContext } from "./lib/scrollObserver";
 import { useContext, useEffect } from "react";
-import { Sidebar } from "./components/sidebar";
 import HeroSection from "./hero";
 import { ContainerMd } from "./components/containers/containers";
-import ServiceIntroduction from "./service.introduction";
 
 export default function Home() {
   let process1 = ["Enquiry", "Requirements", "Measurement", "Contract", "Payment", "Installation", "Testing", "Handover",];

@@ -11,8 +11,6 @@ export interface CarouselHeroSlideProps {
 
 }
 
-
-
 const CarouselHeroSlide = ({ image, title, description, button_text, video, subtitle }: CarouselHeroSlideProps) => {
 
     const hasHeader = () => title && description && button_text;

@@ -1,5 +1,5 @@
-import EmblaCarousel from "./components/hero-carousel/carousel"
-import { CarouselHeroSlideProps } from "./components/hero-carousel/carousel.slides"
+import EmblaCarousel from "./components/hero/hero-carousel/carousel"
+import { CarouselHeroSlideProps } from "./components/hero/hero-carousel/carousel.slides"
 
 
 let slides: CarouselHeroSlideProps[] = [
