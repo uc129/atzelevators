@@ -1,0 +1,99 @@
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+
+.branch{
+  --p_cyan: #0CAADC;
+  --aero:#11B5E4;
+  --aero-tp:rgba(81, 190, 233, 0.026);
+  --baby_powder:#F7F7F2;
+  --night:#121113;
+  --blue-ncs:#1481BA;
+
+  fill: var(--aero);
+}
+
+
+.cls-1 {
+  fill: var(--night);
+}
+
+.cls-3 {
+  font-size: 16px;
+}
+
+.cls-3, .cls-4, .cls-5, .cls-6 {
+  fill: var(--night);
+}
+
+.cls-3, .cls-4, .cls-6 {
+  font-family: NovemberIndia-Black, 'November India';
+  font-variation-settings: 'wdth' 100, 'wght' 900;
+  font-weight: 800;
+}
+
+
+
+.cls-4 {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.cls-7 {
+  fill: none;
+  stroke: #1480ba;
+  stroke-miterlimit: 10;
+}
+
+.cls-8 {
+  fill: #c62aff;
+}
+
+.cls-9 {
+  fill: #11b5e4;
+}
+
+.cls-10 {
+  fill: var(--baby_powder);
+}
+
+
+.cls-27 {
+  fill: #faff8a;
+}
+
+.cls-6 {
+  font-size: 14px;
+}
+
+
+
+
+.branch:hover{
+  fill: var(--p_cyan);
+}
+
+
+.glow {
+  animation: glow 5.5s infinite;
+}
+
+
+@keyframes glow {
+  0% {
+    fill: #11b5e4;
+  }
+  35% {
+    fill: var(--blue-ncs);
+  }
+  100% {
+    fill: #11b5e4;
+  }
+}
+
+
