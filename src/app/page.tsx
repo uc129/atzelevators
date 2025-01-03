@@ -17,8 +17,8 @@ import AllProductsScroller from "./components/products/allProducts";
 import SvgMap from "./components/branches/map";
 import { scrollContext } from "./lib/scrollObserver";
 import { useContext, useEffect } from "react";
-import HeroSection from "./hero";
 import { ContainerMd } from "./components/containers/containers";
+import LandingHero from "./components/hero/banner/hero.landing";
 
 export default function Home() {
   let process1 = ["Enquiry", "Requirements", "Measurement", "Contract", "Payment", "Installation", "Testing", "Handover",];
@@ -49,7 +49,8 @@ export default function Home() {
 
       <div id="section-0" className="" >
         {/* <HeroBanner /> */}
-        <HeroSection />
+        {/* <HeroSection /> */}
+        <LandingHero />
       </div>
 
 

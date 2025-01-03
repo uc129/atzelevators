@@ -524,7 +524,7 @@ export const Navbar = () => {
 
 
     return (
-        <nav className="bg-white text-black ">
+        <nav className="bg-transparent text-white absolute w-screen top-0 ">
 
             <div className="relative pt-6 px-12 flex flex-col gap-4">
 
