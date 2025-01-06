@@ -47,6 +47,11 @@ const NotFeaturedProductsList = ({ products, card_height }: { products: ProductD
     }
   }, [startIndex])
 
+  const height = {
+    lg: cardHeight,
+    sm: "72"
+  }
+
   return (
     <div className="relative overflow-hidden flex flex-col gap-24 pb-14 ">
       <CardHeader
@@ -56,8 +61,8 @@ const NotFeaturedProductsList = ({ products, card_height }: { products: ProductD
 
       <div className="flex flex-col">
         <div className="content">
-          <ProductCardSmall product={products[startIndex]} height={cardHeight} />
-          <ProductCardSmall product={products[startIndex + 1]} height={cardHeight} />
+          <ProductCardSmall product={products[startIndex]} height={height} />
+          <ProductCardSmall product={products[startIndex + 1]} height={height} />
         </div>
 
 
