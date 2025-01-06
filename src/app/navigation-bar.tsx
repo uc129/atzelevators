@@ -1,7 +1,8 @@
 'use client'
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { BiChevronDown } from "react-icons/bi";
+import { BiChevronDown, BiMenu } from "react-icons/bi";
+import { useWindow } from "./lib/window-context";
 
 export interface NavDropdownChild {
     title: string;
@@ -397,7 +398,7 @@ const navDropdownItems: NavDropdownItems[] = [
 
 
 
-export const NavigationBar = () => {
+export const DesktopNavBar = () => {
 
     const [open, setOpen] = useState({
         open: false,
@@ -426,9 +427,9 @@ export const NavigationBar = () => {
 
 
     return (
-        <nav className="uppercase text-sm font-bold tracking-widest sticky top-0 z-50 bg-white shadow-md">
+        <div className="uppercase text-sm font-bold tracking-widest sticky top-0 z-50 bg-white shadow-md">
 
-            <ul className="flex md:justify-between items-center select-none px-12 flex-wrap">
+            <ul className="flex md:justify-between list-none items-center select-none px-12 flex-wrap">
 
                 <li><Link href="/">Home</Link></li>
                 {navDropdownItems.map((navDropdownItem, index) => {
@@ -463,6 +464,93 @@ export const NavigationBar = () => {
                     )
                 })}
             </ul>
-        </nav>
+        </div>
     )
+}
+
+
+
+export const MobileNavbar = () => {
+
+    const [open, setOpen] = useState({
+        open: false,
+        index: -1
+    });
+
+    const [openMenu, setOpenMenu] = useState(false);
+
+    const toggleDropdown = (e: React.MouseEvent) => {
+        e.preventDefault();
+        let indexString = e.currentTarget.getAttribute('data-index');
+        if (!indexString) return
+        let index = parseInt(indexString);
+        if (open.open && open.index === index) {
+            setOpen({ open: false, index: -1 });
+            return;
+        }
+        setOpen({ open: true, index: index });
+    }
+
+    const toggleMenu = () => {
+        setOpenMenu(!openMenu);
+    }
+
+
+    useEffect(() => {
+        if (openMenu) {
+            document.getElementById('mobile-nav')?.classList.add('h-screen');
+            document.body.style.overflow = 'hidden';
+
+        }
+        else {
+            document.getElementById('mobile-nav')?.classList.remove('h-screen');
+            document.body.style.overflow = 'auto';
+        }
+    })
+
+
+    return (
+        <div className=" mobile-nav">
+            <div onClick={toggleMenu} className="flex justify-between items-center p-4">
+                <Link className="text-lg" href='/'>ATZ ELevators</Link>
+                <BiMenu size={46} />
+            </div>
+            {openMenu && <ul>
+                {navDropdownItems.map((navDropdownItem, index) => {
+                    return (
+                        <li key={index} data-index={index} onClick={toggleDropdown}>
+                            <div className="grid grid-cols-2 items-center">
+                                <Link href={navDropdownItem.children[0].url}>{navDropdownItem.parent}</Link>
+                                <div className="p-4 cursor-pointer">
+                                    <BiChevronDown className="chevron" size={24} />
+                                </div>
+                            </div>
+                            {open.open && open.index === index &&
+                                <ul className="">
+                                    {navDropdownItem.children.map((navDropdownChild, index) => {
+                                        return (
+                                            <li key={index}>
+                                                <Link href={navDropdownChild.url}>{navDropdownChild.title}</Link>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>}
+                        </li>
+                    )
+                })}
+            </ul>}
+        </div>
+    )
+}
+
+
+export const NavigationBar = () => {
+
+    const { isMobile, isSmallDesktop, isTablet } = useWindow();
+
+    if (isMobile || isSmallDesktop || isTablet) {
+        return <MobileNavbar />
+    }
+    return <DesktopNavBar />
+
 }
