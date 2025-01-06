@@ -9,7 +9,7 @@ export const StepsArrowInfoGraph = ({ textArray }: ArrowStepInfoGraphProps) => {
 
 
     return (
-        <div className=" flex flex-col justify-center items-center bg-indian_red text-baby_powder">
+        <div className=" flex flex-col justify-center items-center bg-indian_red text-baby_powder p-4">
             {/* <caption className="text-left  text-sm p-12 pb-6 w-full font-bold text-gray-800">Our Process</caption> */}
             <div className="flex items-center justify-start gap-4 flex-wrap">
                 {

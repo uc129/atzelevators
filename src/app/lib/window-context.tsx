@@ -5,7 +5,7 @@ import { useContext, createContext, useEffect, useState } from 'react';
 
 
 export const WindowContext = createContext({
-    isMobile: true,
+    isMobile: false,
     isTablet: false,
     isSmallDesktop: false,
     isDesktop: false,

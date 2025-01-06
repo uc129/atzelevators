@@ -35,7 +35,7 @@
 body,
 html {
   width: 100vw;
-  background-color: white;
+  background-color: var(--baby_powder);
   color: var(--space);
   padding: 0;
   margin: 0 auto;
@@ -103,6 +103,10 @@ section {
   @apply transform translate-y-2 transition-all duration-300;
 }
 
+input{
+  @apply outline-none focus:outline-none bg-baby_powder
+}
+
 select {
   appearance: none;
   border: 0;
@@ -116,7 +120,7 @@ select {
 }
 
 .search-group {
-  @apply flex flex-col items-center justify-center  gap-2 w-full h-24 mx-auto;
+  @apply flex flex-col items-center justify-center  gap-2 w-full lg:h-24 mx-auto;
 }
 
 .search-control {

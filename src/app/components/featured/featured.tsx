@@ -63,8 +63,8 @@ const FeaturedCard = ({ featuredList, listName }: { featuredList: FeaturedData[]
                                 <div className="header flex gap-16 items-center">
 
                                     <div className="left ">
-                                        <h1 className="uppercase text-4xl font-bold">{featuredList[currFrIndex].title}</h1>
-                                        <h2 className="underline underline-offset-4 text-xl">{featuredList[currFrIndex].subtitle}</h2>
+                                        <h1 className={`uppercase text-4xl font-bold ${currFrIndex === 1 ? 'text-blue_ncs' : 'text-indian_red'} `}>{featuredList[currFrIndex].title}</h1>
+                                        <h2 className={`underline underline-offset-4 text-xl ${currFrIndex !== 1 ? 'text-blue_ncs' : 'text-indian_red'}`}>{featuredList[currFrIndex].subtitle}</h2>
                                     </div>
 
                                     <div className="right">

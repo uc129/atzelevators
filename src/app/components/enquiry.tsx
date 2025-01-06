@@ -96,7 +96,7 @@ const EnquiryBox = () => {
         <div>
             <form className=" w-[70%] md:w-[80%] mx-auto p-2 py-6  h-fit flex flex-col gap-8 overflow-hidden" method="POST" action="/search" >
 
-                <div className=" grid items-start grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-12">
+                <div className=" grid items-start grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8  gap-4 md:gap-8 lg:gap-12">
 
                     <div className="selectDoorType search-group">
                         <label htmlFor="doorType" className="search-label">Door Type</label>
@@ -143,7 +143,7 @@ const EnquiryBox = () => {
 
                     <div className="search-group">
                         <label htmlFor="submit" className="search-label"> Search </label>
-                        <button onClick={handleConfirm} type="button" id="enquiry-submit-button" name="submit" className="search-control hover:bg-blue_ncs hover:text-baby_powder transition-all duration-300">
+                        <button onClick={handleConfirm} type="button" id="enquiry-submit-button" name="submit" className="search-control bg-indian_red hover:bg-blue_ncs text-baby_powder transition-all duration-300">
                             Submit Enquiry
                         </button>
                     </div>

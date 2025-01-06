@@ -3,6 +3,7 @@
 
 import { SVGProps, useEffect, useState } from 'react';
 import './map.css'
+import { useWindow } from '@/app/lib/window-context';
 
 export interface BranchInterface {
   name: string;
@@ -12,157 +13,11 @@ export interface BranchInterface {
   fax: string;
 }
 
-// let BranchData = {
-//   "INBR": {
-//     name: 'Bihar',
-//     branches: [
-//       {
-//         name: 'Patna',
-//         address: 'Bihar',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       },
-//       {
-//         name: 'Gaya',
-//         address: 'Bihar',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       },
-//       {
-//         name: 'Muzaffarpur',
-//         address: 'Bihar',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       }
-//     ],
-//     branches_count: 3,
-//   },
-//   "INJH": {
-//     name: 'Jharkhand',
-//     branches: [
-//       {
-//         name: 'Ranchi',
-//         address: 'Jharkhand',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       },
-//       {
-//         name: 'Dhanbad',
-//         address: 'Jharkhand',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       },
-//       {
-//         name: 'Bokaro',
-//         address: 'Jharkhand',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       }
-//     ],
-//     branches_count: 3,
-//   },
-
-//   "INOR": {
-//     name: 'Orissa',
-//     branches: [
-//       {
-//         name: 'Bhubaneswar',
-//         address: 'Orissa',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       },
-//       {
-//         name: 'Cuttack',
-//         address: 'Orissa',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       },
-//       {
-//         name: 'Rourkela',
-//         address: 'Orissa',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       }
-//     ],
-//     branches_count: 3,
-//   },
-
-//   "INWB": {
-//     name: 'West Bengal',
-//     branches: [
-//       {
-//         name: 'Kolkata',
-//         address: 'West Bengal',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       },
-//       {
-//         name: 'Durgapur',
-//         address: 'West Bengal',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       },
-//       {
-//         name: 'Siliguri',
-//         address: 'West Bengal',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       }
-//     ],
-//     branches_count: 3,
-//   },
-
-//   "INAS": {
-//     name: 'Assam',
-//     branches: [
-//       {
-//         name: 'Guwahati',
-//         address: 'Assam',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       },
-//       {
-//         name: 'Dibrugarh',
-//         address: 'Assam',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       },
-//       {
-//         name: 'Silchar',
-//         address: 'Assam',
-//         phone: '1234567890',
-//         email: '',
-//         fax: '',
-//       }
-//     ],
-//     branches_count: 3,
-//   },
-
-// }
-
-
-
-
-
 
 const SvgMap = (props: SVGProps<SVGSVGElement>) => {
 
   return (
-    <div className="overflow-hidden rounded-xl" >
+    <div className="" >
       <SVG />
     </div>
   )
@@ -174,6 +29,7 @@ const SvgMap = (props: SVGProps<SVGSVGElement>) => {
 let SVG = () => {
 
   const [currBranch, setCurrBranch] = useState('')
+  const { isMobile, isTablet, isSmallDesktop } = useWindow();
 
   useEffect(() => {
     if (!document) return;
@@ -234,7 +90,7 @@ let SVG = () => {
 
 
 
-  return <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="-40 100 1100 405">
+  return <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox={`${isMobile || isTablet || isSmallDesktop ? '405 100 460 405' : '55 100 1000 405'}`}>
 
     <g id="map" className='rounded-xl'>
       <g>

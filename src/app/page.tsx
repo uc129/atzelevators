@@ -53,7 +53,7 @@ export default function Home() {
         <WhyUs />
       </section>
 
-      <div className="p-12 px-16">
+      <div className=" px-8 lg:p-12 lg:px-16 ">
         <StepsArrowInfoGraph textArray={process1} />
       </div>
 
@@ -105,11 +105,11 @@ export default function Home() {
         </section>
 
 
-        <section id="section-10" className="section  rounded-b-2xl">
+        {/* <section id="section-10" className="section  rounded-b-2xl">
           <TestimonialsCarousel slides={TestimonialDetails} />
-        </section>
+        </section> */}
 
-        <div id="section-11" className=" overflow-hidden mt-12 section rounded-t-xl">
+        <div id="section-11" className=" overflow-hidden pt-12 mt-12 section rounded-xl border-t-[1px] border-gray-50">
           <SvgMap />
         </div>
 

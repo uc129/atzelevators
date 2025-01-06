@@ -11,8 +11,8 @@ const LandingHero = () => {
 
             <div
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-                <h1 className="text-6xl text-white font-bold">ATZ Elevator</h1>
-                <p className="text-white">Keeping the world in motion</p>
+                <h1 className="text-6xl lg:text-8xl text-baby_powder font-bold">ATZ Elevator</h1>
+                <p className="text-baby_powder">Keeping the world in motion</p>
             </div>
         </section>
     )

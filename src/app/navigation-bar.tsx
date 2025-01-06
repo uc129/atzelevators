@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BiChevronDown, BiMenu } from "react-icons/bi";
 import { useWindow } from "./lib/window-context";
+import { CgClose } from "react-icons/cg";
 
 export interface NavDropdownChild {
     title: string;
@@ -427,7 +428,7 @@ export const DesktopNavBar = () => {
 
 
     return (
-        <div className="uppercase text-sm font-bold tracking-widest sticky top-0 z-50 bg-white shadow-md">
+        <div className="uppercase text-sm font-bold tracking-widest sticky top-0 z-50 bg-baby_powder shadow-md">
 
             <ul className="flex md:justify-between list-none items-center select-none px-12 flex-wrap">
 
@@ -447,7 +448,7 @@ export const DesktopNavBar = () => {
 
                             </div>
                             {open.open && open.index === index &&
-                                <ul className=" absolute min-w-[320px] w-fit p-4 -ml-4 bg-white z-50 text-black">
+                                <ul className=" absolute min-w-[320px] w-fit p-4 -ml-4 bg-baby_powder z-50 text-black">
                                     {navDropdownItem.children.map((navDropdownChild, index) => {
                                         return (
                                             <li key={index} className="flex items-center gap-1">
@@ -500,37 +501,37 @@ export const MobileNavbar = () => {
         if (openMenu) {
             document.getElementById('mobile-nav')?.classList.add('h-screen');
             document.body.style.overflow = 'hidden';
-
         }
         else {
             document.getElementById('mobile-nav')?.classList.remove('h-screen');
             document.body.style.overflow = 'auto';
         }
-    })
+    }, [openMenu])
+
 
 
     return (
-        <div className=" mobile-nav">
+        <div className={` mobile-nav px-8  ${openMenu ? 'h-screen' : 'h-16'}`} id="mobile-nav" style={{ zIndex: 1000 }}>
             <div onClick={toggleMenu} className="flex justify-between items-center p-4">
                 <Link className="text-lg" href='/'>ATZ ELevators</Link>
-                <BiMenu size={46} />
+                {!openMenu ? <BiMenu size={46} /> : <CgClose size={46} />}
             </div>
-            {openMenu && <ul>
+            {openMenu && <ul className="list-none">
                 {navDropdownItems.map((navDropdownItem, index) => {
                     return (
-                        <li key={index} data-index={index} onClick={toggleDropdown}>
+                        <li key={index} data-index={index} onClick={toggleDropdown} className="nav-item">
                             <div className="grid grid-cols-2 items-center">
-                                <Link href={navDropdownItem.children[0].url}>{navDropdownItem.parent}</Link>
+                                <Link href={navDropdownItem.children[0].url} onClick={() => setOpenMenu(false)}>{navDropdownItem.parent}</Link>
                                 <div className="p-4 cursor-pointer">
                                     <BiChevronDown className="chevron" size={24} />
                                 </div>
                             </div>
                             {open.open && open.index === index &&
-                                <ul className="">
+                                <ul className="list-none">
                                     {navDropdownItem.children.map((navDropdownChild, index) => {
                                         return (
                                             <li key={index}>
-                                                <Link href={navDropdownChild.url}>{navDropdownChild.title}</Link>
+                                                <Link href={navDropdownChild.url} onClick={() => setOpenMenu(false)}>{navDropdownChild.title}</Link>
                                             </li>
                                         )
                                     })}

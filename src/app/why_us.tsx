@@ -1,9 +1,22 @@
 /** @format */
+'use client';
 
-import Image from "next/image";
+import Link from "next/link";
 import { ContainerMd } from "./components/containers/containers";
 
+
 const WhyUs = () => {
+
+
+
+  const handleEnquireNow = () => {
+    const enquireForm = document.querySelector("#section1");
+    if (!enquireForm) return
+    enquireForm.scrollIntoView({ behavior: "smooth" });
+  };
+
+
+
   return (
     <ContainerMd>
 
@@ -43,23 +56,21 @@ const WhyUs = () => {
               ></div>
 
               <ul style={{}}
-                className="pl-12 *:z-10 text-lg lg:text-lg 2xl:text-xl underline underline-offset-4
-                                  flex justify-end flex-wrap gap-0 lg:gap-4 tracking-tighter"
+                className="pl-12  text-lg grid grid-cols-1 md:grid-cols-2"
               >
                 <li className="why">25+ years in operation.</li>
-                <li className="why">Excellent quality guaranteed.</li>
                 <li className="why">24/7 customer support.</li>
-                <li className="why">25+ years in operation.</li>
-                <li className="why">Excellent quality guaranteed.</li>
-                <li className="why">24/7 customer support.</li>
+                <li className="why">Economical Pricing.</li>
+                <li className="why">Premium Quality.</li>
+                <li className="why">A vision for the future.</li>
               </ul>
             </div>
 
           </div>
 
           <div className="button relative  w-full flex justify-end items-center pb-4">
-            <button className="round-button-group_light w-full 2xl:w-[72%]  h-14 "
-              style={{ fontSize: "1.5rem" }}
+            <button className="round-button-group_light w-full 2xl:w-[72%]  h-14  cursor-pointer"
+              style={{ fontSize: "1.5rem" }} onClick={handleEnquireNow}
             >
               Enquire Now
             </button>
@@ -75,25 +86,28 @@ const WhyUs = () => {
               style={{ wordBreak: "keep-all", textUnderlineOffset: "12px" }}>
               Why Choose Us?
             </h1>
-            <div className="flex flex-col gap-1 font-bold">
-              <p className="">25+ years in operation</p>
-              <p className="">Excellent quality guaranteed</p>
-              <p className="">24/7 customer support</p>
-              <p className="">24/7 customer support</p>
-              <p className="">24/7 customer support</p>
-            </div>
+            <ul className="flex text-lg flex-col gap-1 font-bold">
+              <li className="why">25+ years in operation.</li>
+              <li className="why">24/7 customer support.</li>
+              <li className="why">Economical Pricing.</li>
+              <li className="why">Premium Quality.</li>
+              <li className="why">A vision for the future.</li>
+            </ul>
           </div>
 
-          <div className="button relative py-8 w-full flex justify-center gap-4 items-center pb-8 *:text-lg keep-word">
-            <button className="round-button-group w-full h-14 ">
+          <div className="button relative py-8 w-full flex justify-center gap-4 items-center pb-8  keep-word ">
+
+            <button className="round-button-group w-full min-h-20 sm:min-h-14 cursor-pointer text-lg md:text-xl " onClick={handleEnquireNow}>
               Enquire Now
             </button>
-            <button className="round-button-group w-full h-14">
-              Send Message
-            </button>
-            <button className="round-button-group w-full h-14">
-              Contact Sales
-            </button>
+            <Link href='/contact' className="round-button-group w-full  min-h-20 sm:min-h-14 cursor-pointer flex items-center justify-center text-center ">
+              <p>
+                Send Message
+              </p>
+            </Link>
+            <Link href={"tel:9334119103"} className="round-button-group  w-full flex items-center justify-center min-h-20 sm:min-h-14 text-center  cursor-pointer">
+              <p>Contact Sales</p>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,8 +1,7 @@
 /** @format */
 
 import Link from "next/link";
-import ProductChangeButton from "./button";
-import Image from "next/image";
+
 
 export interface CardHeaderProps {
   title: string;
@@ -81,7 +80,7 @@ const ContentLayer = ({
 
         <div className="left flex flex-col gap-4">
 
-          <h4 className="text-2xl font-semibold text-blue_ncs underline underline-offset-4"
+          <h4 className="text-2xl font-semibold text-indian_red underline underline-offset-4"
             style={{ wordBreak: "keep-all" }}>
             {" "}{subtitle}{" "}
           </h4>
@@ -93,7 +92,7 @@ const ContentLayer = ({
                   <Link href='#' className="text-sm "> {variant.title} </Link>
                 </div>
               ))}
-              <Link href='#' className="text-sm"> {"View All"} </Link>
+              {/* <Link href='#' className="text-sm"> {"View All"} </Link> */}
             </div>
           )}
 

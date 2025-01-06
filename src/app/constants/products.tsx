@@ -7,7 +7,7 @@ export const ProductsDetail: ProductDetailInterface[] = [
 
     {
         title: "Manual Door Passenger Elevators",
-        subtitle: 'Easy to use and maintain',
+        subtitle: 'Economical and reliable',
         description: "Manual Door Passenger Elevators are traditional lifts that feature manually operated doors, offering a simple and reliable solution for low to mid-rise buildings. Ideal for residential and small commercial spaces, these elevators combine durability with straightforward functionality, providing a cost-effective option for passenger transportation.",
         featured: true,
         id: 'manual-door-passenger-elevators',
@@ -184,7 +184,7 @@ export const ProductsDetail: ProductDetailInterface[] = [
         ],
         variants: [
             {
-                title: 'Goods Elevator 1',
+                title: 'Goods Elevator',
                 subtitle: 'For heavy duty and industrial use',
                 description: 'Featuring traditional grill design doors, these elevators are ideal for residential and small commercial spaces. The grill doors provide a classic look and feel, while ensuring safety and security for passengers.',
                 images: [
@@ -194,7 +194,23 @@ export const ProductsDetail: ProductDetailInterface[] = [
                     },
                 ],
                 price: 100000,
-                tagline: 'Shiny Finish, Premium Feel',
+                tagline: 'Rugged, Heavy Duty',
+                id: 'goods-elevator-1',
+                index: '01',
+                url: '/elevators/freight-goods-elevator'
+            },
+            {
+                title: 'Service Elevator',
+                subtitle: 'For use in apartments and hotels',
+                description: 'Featuring traditional grill design doors, these elevators are ideal for residential and small commercial spaces. The grill doors provide a classic look and feel, while ensuring safety and security for passengers.',
+                images: [
+                    {
+                        name: 'Service Elevator 1',
+                        src: '/elevators/goods/goods-1.jpg'
+                    },
+                ],
+                price: 100000,
+                tagline: 'Large Capacity, Durable',
                 id: 'goods-elevator-1',
                 index: '01',
                 url: '/elevators/freight-goods-elevator'
