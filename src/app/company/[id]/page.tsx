@@ -59,7 +59,7 @@ export default function CompanyHistory() {
                                 Our journey has been marked by a commitment to safety, innovation, and customer satisfaction. With more than two decades of excellence, ATZ Elevators has expanded its presence to over 40 cities across 5+ states, completing 1500+ installations and maintaining 450+ sites
                             </p>
                             <p>
-                                Today, under the leadership of our Director, Mr. Nalinikant Chaudhary, our Managing Director, Mrs. Amrita Jha and our CEO Mr. Ambudhi Vishal, we continue to honor our founder's vision by driving the company forward with next-generation ideas and state-of-the-art technology. With a steadfast focus on quality, integrity, and continuous improvement, ATZ Elevators is dedicated to enhancing city life and setting new benchmarks in the elevator industry.
+                                Today, under the leadership of our Director, Mr. Nalinikant Chaudhary, our Managing Director, Mrs. Amrita Jha and our CEO Mr. Ambudhi Vishal, we continue to honor our founder&apos;s vision by driving the company forward with next-generation ideas and state-of-the-art technology. With a steadfast focus on quality, integrity, and continuous improvement, ATZ Elevators is dedicated to enhancing city life and setting new benchmarks in the elevator industry.
                             </p>
                         </div>
 

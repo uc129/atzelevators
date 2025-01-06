@@ -25,7 +25,7 @@ export const usePrevNextButtons = (emblaApi: EmblaCarouselType | undefined, tota
         emblaApi.scrollPrev()
         if (currentIndex === 0) setCurrentIndex(totalSlides - 1)
         else setCurrentIndex(currentIndex - 1)
-    }, [emblaApi, currentIndex])
+    }, [emblaApi, currentIndex, totalSlides])
 
     const onNextButtonClick = useCallback(() => {
         if (!emblaApi) return
@@ -33,12 +33,12 @@ export const usePrevNextButtons = (emblaApi: EmblaCarouselType | undefined, tota
         if (currentIndex === totalSlides - 1) setCurrentIndex(0)
         else setCurrentIndex(currentIndex + 1)
 
-    }, [emblaApi, currentIndex])
+    }, [emblaApi, currentIndex, totalSlides])
 
     const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
         setPrevBtnDisabled(!emblaApi.canScrollPrev())
         setNextBtnDisabled(!emblaApi.canScrollNext())
-    }, [])
+    }, [setPrevBtnDisabled, setNextBtnDisabled, emblaApi])
 
     useEffect(() => {
         if (!emblaApi) return
