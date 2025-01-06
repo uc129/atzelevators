@@ -456,6 +456,35 @@ const navDropdownItems: NavDropdownItems[] = [
 export const Navbar = () => {
 
 
+    const [currentDropdown, setCurrentDropdown] = React.useState<string | null>(null)
+    let currentDropdownItem = navDropdownItems.find(item => item.ariaControls === currentDropdown);
+
+    useEffect(() => {
+
+        const handleClick = (e: MouseEvent) => {
+            if (e.target instanceof HTMLElement)
+                if (!e.target.closest('nav'))
+                    setCurrentDropdown(null);
+        }
+        document.addEventListener('click', handleClick);
+        return () => document.removeEventListener('click', handleClick);
+
+
+    })
+
+    useEffect(() => {
+
+        let otherDropdowns = navDropdownItems.filter(item => item.ariaControls !== currentDropdown);
+        otherDropdowns.forEach(item => {
+            let otherDropdown = document.getElementById(item.ariaControls + '-chevron');
+            if (otherDropdown) {
+                otherDropdown.classList.remove('rotate-180');
+            }
+        })
+
+    }, [currentDropdown])
+
+
     const handleDropDownClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         console.log(e.currentTarget.getAttribute('aria-controls'));
@@ -472,55 +501,11 @@ export const Navbar = () => {
 
     }
 
+    const [search, setSearch] = React.useState<string>('');
+    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearch(e.target.value);
+    }
 
-
-
-
-
-    // const handleMouseEnter = (e: React.MouseEvent<HTMLLIElement>) => {
-    //     e.preventDefault();
-    //     console.log(e.currentTarget.getAttribute('aria-controls'));
-    //     let ariaControls = e.currentTarget.getAttribute('aria-controls');
-    //     let desc = currentDropdownItem?.children.find(item => item.ariaControls === ariaControls)?.description;
-    //     setCurrDesc(desc as string);
-    // }
-
-
-    //setCurrentDropdown(null) if clicked outside the nav element;
-
-    useEffect(() => {
-
-        const handleClick = (e: MouseEvent) => {
-            if (e.target instanceof HTMLElement)
-                if (!e.target.closest('nav'))
-                    setCurrentDropdown(null);
-
-        }
-
-        document.addEventListener('click', handleClick);
-
-        return () => {
-            document.removeEventListener('click', handleClick);
-        }
-
-    })
-
-    const [currentDropdown, setCurrentDropdown] = React.useState<string | null>(null)
-    let currentDropdownItem = navDropdownItems.find(item => item.ariaControls === currentDropdown);
-    // const [currDesc, setCurrDesc] = React.useState<string | null>(currentDropdownItem?.children[0].description as string);
-
-
-    useEffect(() => {
-
-        let otherDropdowns = navDropdownItems.filter(item => item.ariaControls !== currentDropdown);
-        otherDropdowns.forEach(item => {
-            let otherDropdown = document.getElementById(item.ariaControls + '-chevron');
-            if (otherDropdown) {
-                otherDropdown.classList.remove('rotate-180');
-            }
-        })
-
-    }, [currentDropdown])
 
 
     return (
@@ -539,7 +524,7 @@ export const Navbar = () => {
                     <li className="">
                         <ul className="flex gap-8 items-center">
                             <li><p>AMBA TIRUPATI ZETETIC ENGINEERING PVT. LTD. </p></li>
-                            <li> <input className="rounded-full p-3 bg-gray-200 outline outline-blue-300" type="search" name="search" id="search" /> </li>
+                            <li> <input onChange={handleSearchChange} className="rounded-full p-3 bg-gray-200 text-black outline outline-blue-300" type="search" name="search" id="search" /> </li>
                             <button type="button"> Contact Us </button>
                         </ul>
                     </li>

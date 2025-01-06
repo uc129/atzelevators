@@ -1,3 +1,5 @@
+/** @format */
+
 .embla {
   /* max-width: 48rem; */
   margin: auto;
@@ -10,7 +12,7 @@
   overflow: visible;
 }
 
-.embla__container{
+.embla__container {
   display: flex;
   touch-action: pan-y pinch-zoom;
   /* background-color: blue; */
@@ -19,8 +21,7 @@
 
 .embla__slide {
   transform: translate3d(0, 0, 0);
-  flex: 0 0 var(--slide-size);
-  min-width: 240px;
+  min-width: 420px;
   padding-left: var(--slide-spacing);
   /* background-color: cornflowerblue; */
   margin: 0 auto;
@@ -28,11 +29,6 @@
   align-items: center;
   text-align: center;
 }
-
-
-
-
-
 
 .embla__slide__number {
   box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);

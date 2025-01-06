@@ -1,6 +1,5 @@
 /** @format */
 "use client";
-import SearchBox from "./components/search";
 import ProductCard from "./components/products/card";
 import { ProductsDetail } from "./constants/products";
 import FeaturedCard from "./components/featured/featured";
@@ -19,6 +18,7 @@ import { scrollContext } from "./lib/scrollObserver";
 import { useContext, useEffect } from "react";
 import { ContainerMd } from "./components/containers/containers";
 import LandingHero from "./components/hero/banner/hero.landing";
+import EnquiryBox from "./components/enquiry";
 
 export default function Home() {
   let process1 = ["Enquiry", "Requirements", "Measurement", "Contract", "Payment", "Installation", "Testing", "Handover",];
@@ -30,34 +30,24 @@ export default function Home() {
 
 
   const { scrollY } = useContext(scrollContext);
-  console.log(scrollY);
 
 
-  useEffect(() => {
-    if (!window) return;
-    if (!document) return;
-
-    let height = window.innerHeight;
-    let width = window.innerWidth;
-    console.log("h+w", height, width);
-
-  })
 
 
   return (
-    <main className="wrapper grid grid-cols-1 gap-16 pb-24  ">
+    <div className="wrapper grid grid-cols-1 gap-16 pb-24  ">
 
       <div id="section-0" className="" >
-        {/* <HeroBanner /> */}
-        {/* <HeroSection /> */}
         <LandingHero />
       </div>
 
-
-
       <section id="section-1" className="section"  >
-        <SearchBox />
+        <EnquiryBox />
       </section>
+
+      <div id="enquiry-modal">
+
+      </div>
 
       <section id="section-2" className="section">
         <WhyUs />
@@ -72,7 +62,8 @@ export default function Home() {
 
 
         <section id="section-3" className="section products py-8 ">
-          <ProductCard product={featuredProducts[1]} index={"01"} totalNumProducts={featuredProducts.length} icons={["abc", "abc"]} />
+          <ProductCard product={featuredProducts[1]} index={"01"} totalNumProducts={featuredProducts.length}
+            icons={featuredProducts[1].animatedIcons} />
         </section>
 
         <section id="section-4" className=" featured  section">
@@ -81,7 +72,9 @@ export default function Home() {
 
         <section id="section-5" className=" products pt-16 section ">
 
-          <ProductCard product={featuredProducts[0]} index={"02"} totalNumProducts={featuredProducts.length} />
+          <ProductCard product={featuredProducts[0]} index={"02"} totalNumProducts={featuredProducts.length}
+            icons={featuredProducts[0].animatedIcons}
+          />
 
         </section>
 
@@ -99,7 +92,10 @@ export default function Home() {
 
 
         <section id="section-8" className="  products py-8 section">
-          <ProductCard product={featuredProducts[2]} index={"03"} totalNumProducts={featuredProducts.length} />
+          <ProductCard product={featuredProducts[2]} index={"03"} totalNumProducts={featuredProducts.length}
+            icons={featuredProducts[2].animatedIcons}
+
+          />
         </section>
 
 
@@ -121,7 +117,7 @@ export default function Home() {
 
 
 
-    </main>
+    </div>
   );
 }
 

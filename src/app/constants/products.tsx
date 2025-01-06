@@ -15,7 +15,7 @@ export const ProductsDetail: ProductDetailInterface[] = [
         images: [
             {
                 name: "Manual Door Passenger Elevator 1",
-                src: "https://res.cloudinary.com/drqofmj2h/image/upload/v1724668970/ATZ/manual_-3-removebg_yzydb0.png"
+                src: "/elevators/collapsible/collapsible-1.jpg"
             },
             {
                 name: "Manual Door Passenger Elevator 2",
@@ -26,6 +26,7 @@ export const ProductsDetail: ProductDetailInterface[] = [
                 src: "https://res.cloudinary.com/drqofmj2h/image/upload/v1724641999/ATZ/manual_-1_katl8a.jpg"
             }
         ],
+        animatedIcons: [<></>],
         variants: [
             {
                 title: 'Collapsible Door',
@@ -34,14 +35,19 @@ export const ProductsDetail: ProductDetailInterface[] = [
                 images: [
                     {
                         name: 'Collapsible Door Passenger Elevator 1',
-                        src: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1724641999/ATZ/manual_-1_katl8a.jpg'
+                        src: '/elevators/manual/manual-1.jpg'
                     },
                     {
                         name: 'Collapsible Door Passenger Elevator 2',
                         src: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1724642002/ATZ/manual_-4_mydmq1.png'
                     }
 
-                ]
+                ],
+                price: 100000,
+                id: 'collapsible-door-passenger-elevators',
+                index: '01',
+                tagline: 'Shiny Finish, Premium Feel',
+                url: '/elevators/manual-door-passenger-elevators'
             },
             {
                 title: 'Swing Door',
@@ -50,13 +56,19 @@ export const ProductsDetail: ProductDetailInterface[] = [
                 images: [
                     {
                         name: 'Swing Door Passenger Elevator 1',
-                        src: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1724641999/ATZ/manual_-1_katl8a.jpg'
+                        src: '/elevators/manual/swing.jpg'
                     },
                     {
                         name: 'Swing Door Passenger Elevator 2',
                         src: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1724642002/ATZ/manual_-4_mydmq1.png'
-                    }
-                ]
+                    },
+                ],
+                price: 120000,
+                id: 'swing-door-passenger-elevators',
+                index: '02',
+                tagline: 'Classic Finish, Durable',
+                url: '/elevators/manual-door-passenger-elevators'
+
 
             }
         ],
@@ -74,8 +86,8 @@ export const ProductsDetail: ProductDetailInterface[] = [
         index: '05',
         images: [
             {
-                name: "Automatic Door Passenger Elevator 1",
-                src: "https://res.cloudinary.com/drqofmj2h/image/upload/v1724641999/ATZ/manual_-1_katl8a.jpg"
+                name: "Mild Steel",
+                src: "/elevators/auto/ms-elevator.avif"
             },
             {
                 name: "Automatic Door Passenger Elevator 2",
@@ -86,42 +98,45 @@ export const ProductsDetail: ProductDetailInterface[] = [
                 src: "https://res.cloudinary.com/drqofmj2h/image/upload/v1724668970/ATZ/manual_-3-removebg_yzydb0.png"
             }
         ],
+        animatedIcons: [<></>],
         variants: [
             {
-                id: 'automatic-door-passenger-elevators-ss',
-                title: 'Auto Door 1',
+                id: 'automatic-door-passenger-elevators-ms',
+                title: 'Mild Steel',
                 subtitle: 'Easy to use and maintain',
                 description: 'Featuring traditional grill design doors, these elevators are ideal for residential and small commercial spaces. The grill doors provide a classic look and feel, while ensuring safety and security for passengers.',
                 images: [
                     {
-                        name: 'Collapsible Door Passenger Elevator 1',
-                        src: '/elevators/auto/auto-1.jpg'
+                        name: 'Mild Steel Passenger Elevator 1',
+                        src: '/elevators/auto/ms-elevator.avif'
                     },
-
-
                 ],
                 price: 100000,
-                tagline: 'Shiny Finish, Premium Feel'
+                tagline: 'Powder coated steel, Economical',
+                index: '01',
+                url: '/elevators/automatic-door-passenger-elevators'
 
             },
             {
                 id: 'automatic-door-passenger-elevators-auto-door-2',
-                title: 'Auto Door 2',
+                title: 'Stainless Steel',
                 subtitle: 'Easy to use and maintain',
                 description: 'Featuring traditional swing doors, these elevators are ideal for residential and small commercial spaces. The swing doors provide a classic look and feel, while ensuring safety and security for passengers.',
                 images: [
                     {
-                        name: 'Swing Door Passenger Elevator 1',
-                        src: '/elevators/auto/auto-2.jpg'
+                        name: 'Stainless Steel Passenger Elevator 1',
+                        src: '/elevators/auto/ss-cop.jpg'
                     },
 
                 ],
                 price: 120000,
-                tagline: 'Classic Finish, Durable'
+                tagline: 'Polished Steel, Durable',
+                index: '01',
+                url: '/elevators/automatic-door-passenger-elevators'
             },
             {
                 id: 'automatic-door-passenger-elevators-auto-door-3',
-                title: 'Auto Door 3',
+                title: 'Mirror Finish',
                 subtitle: 'Easy to use and maintain',
                 description: 'Featuring traditional swing doors, these elevators are ideal for residential and small commercial spaces. The swing doors provide a classic look and feel, while ensuring safety and security for passengers.',
                 images: [
@@ -132,7 +147,9 @@ export const ProductsDetail: ProductDetailInterface[] = [
 
                 ],
                 price: 150000,
-                tagline: 'Classic Finish, Durable'
+                tagline: 'Mirror Finish, Shiny',
+                index: '01',
+                url: '/elevators/automatic-door-passenger-elevators'
             }
 
 
@@ -177,8 +194,12 @@ export const ProductsDetail: ProductDetailInterface[] = [
                     },
                 ],
                 price: 100000,
-                tagline: 'Shiny Finish, Premium Feel'
+                tagline: 'Shiny Finish, Premium Feel',
+                id: 'goods-elevator-1',
+                index: '01',
+                url: '/elevators/freight-goods-elevator'
             },
+
         ],
         icon: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1724641999/ATZ/manual_-1_katl8a.jpg',
         price: 'starting at 1,20,000',

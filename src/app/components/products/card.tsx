@@ -16,6 +16,7 @@ export interface ProductDetailInterface {
     icon?: string;
     features?: string[];
     totalNumber?: number;
+    animatedIcons?: React.ReactNode[];
 }
 
 export interface ProductVariantInterface {
@@ -26,6 +27,7 @@ export interface ProductVariantInterface {
     description: string;
     price?: number;
     tagline: string;
+    url: string;
     images: { name: string, src: string }[]
 }
 
@@ -33,7 +35,7 @@ interface ProductCardProps {
     product: ProductDetailInterface;
     index: string;
     totalNumProducts: number;
-    icons?: string[]
+    icons?: React.ReactNode[]
 }
 
 const ProductCard = ({ product, index, totalNumProducts, icons }: ProductCardProps) => {

@@ -5,6 +5,7 @@ export interface Service {
     description: string,
     images: { name: string, src: string }[],
     featured: boolean,
+    url: string,
     meta: {
         meta1: string,
         meta2: string,
@@ -27,7 +28,9 @@ export const ServicesData: Service[] = [
         id: 'installation',
         title: 'Installation Services',
         subtitle: 'Elevator and Escalator Installation',
-        description: 'We provide installation services for elevators and escalators. Our team of experts will ensure that the installation is done in a timely and efficient manner.',
+        description: 'We provide installation services for elevators and escalators. Our team of experts will ensure that the installation is done in a timely and efficient manner. We use the latest technology and equipment to ensure that your elevators and escalators are installed to the highest standards.',
+        url: '/services/installation',
+
         meta: {
             meta1: '3000+ Installations',
             meta2: '1500+ Modernizations',
@@ -38,7 +41,7 @@ export const ServicesData: Service[] = [
         images: [
             {
                 name: 'installation',
-                src: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1706425567/illustrator/Asset_25_jnybxk.svg'
+                src: '/services/installation-2.jpg'
             },
             {
                 name: 'installation',
@@ -51,8 +54,8 @@ export const ServicesData: Service[] = [
         ],
         catalog: {
             name: 'installation',
-            thumbnail: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1706425567/illustrator/Asset_25_jnybxk.svg',
-            src: '/installation-catalog.pdf'
+            thumbnail: '/Atz-catalog-front.png',
+            src: '/ATZ-catalog.pdf'
         }
     },
     {
@@ -60,6 +63,8 @@ export const ServicesData: Service[] = [
         title: 'Maintenance Services',
         subtitle: 'Elevator and Escalator Maintenance',
         description: 'We provide maintenance services for elevators and escalators. Our team of experts will ensure that the maintenance is done in a timely and efficient manner.',
+        url: '/services/maintenance',
+
         meta: {
             meta1: '1500+ Maintenance',
             meta2: '70+ Employees',
@@ -69,7 +74,7 @@ export const ServicesData: Service[] = [
         images: [
             {
                 name: 'maintenance',
-                src: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1706425567/illustrator/Asset_25_jnybxk.svg'
+                src: '/services/maintenance.png'
             },
             {
                 name: 'maintenance',
@@ -82,8 +87,9 @@ export const ServicesData: Service[] = [
         ],
         catalog: {
             name: 'maintenance',
-            thumbnail: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1706425567/illustrator/Asset_25_jnybxk.svg',
-            src: '/maintenance-catalog.pdf'
+            thumbnail: '/Atz-catalog-front.png',
+            src: '/ATZ-catalog.pdf'
+
         }
     },
     {
@@ -91,6 +97,7 @@ export const ServicesData: Service[] = [
         title: 'Modernization Services',
         subtitle: 'Elevator and Escalator Modernization',
         description: 'We provide modernization services for elevators and escalators. Our team of experts will ensure that the modernization is done in a timely and efficient manner.',
+        url: '/services/modernization',
         meta: {
             meta1: '1500+ Modernizations',
             meta2: '70+ Employees',
@@ -100,7 +107,7 @@ export const ServicesData: Service[] = [
         images: [
             {
                 name: 'modernization',
-                src: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1706425567/illustrator/Asset_25_jnybxk.svg'
+                src: '/services/modernization.png'
             },
             {
                 name: 'modernization',
@@ -113,8 +120,8 @@ export const ServicesData: Service[] = [
         ],
         catalog: {
             name: 'modernization',
-            thumbnail: 'https://res.cloudinary.com/drqofmj2h/image/upload/v1706425567/illustrator/Asset_25_jnybxk.svg',
-            src: '/modernization-catalog.pdf'
+            thumbnail: '/Atz-catalog-front.png',
+            src: '/ATZ-catalog.pdf'
         }
 
     }

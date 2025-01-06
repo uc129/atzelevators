@@ -9,8 +9,7 @@ import {
     usePrevNextButtons
 } from './ArrowButtons'
 import './embla.css'
-import { ProductDetailInterface, ProductVariantInterface } from '../products/card'
-import Image from 'next/image'
+import { ProductVariantInterface } from '../products/card'
 import { ProductSlide } from '../products/slide'
 
 interface EmblaCarouselProps {

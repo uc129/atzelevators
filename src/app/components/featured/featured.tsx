@@ -5,6 +5,8 @@ import Image from "next/image"
 import Link from "next/link";
 import { useEffect, useState } from "react"
 
+
+
 interface FeaturedData extends Service {
 }
 
@@ -33,6 +35,11 @@ const FeaturedCard = ({ featuredList, listName }: { featuredList: FeaturedData[]
         return () => clearInterval(interval)
     })
 
+    let split_description = featuredList[currFrIndex].description.split('. ');
+
+
+
+
 
 
     return (
@@ -40,14 +47,17 @@ const FeaturedCard = ({ featuredList, listName }: { featuredList: FeaturedData[]
             <div className=" featureList">
                 <div className=" feature  flex flex-col gap-24">
 
-                    <div className=" feature top  h-fit flex flex-wrap  justify-between gap-24 items-center ">
+                    <div className=" feature top flex flex-wrap gap-6 ">
 
-                        <div className="left image w-full md:w-[30%]">
-                            <Image className="w-full xl:w-[430px]" src={featuredList[currFrIndex].images[0].src} alt={featuredList[currFrIndex].images[0].name}
-                                width={430} height={430} />
+                        <div className="left image w-full lg:w-[40%] ">
+                            <Image className="w-full xl:w-[630px] rounded-lg"
+                                src={featuredList[currFrIndex].images[0].src}
+                                alt={featuredList[currFrIndex].images[0].name}
+                                width={430} height={430}
+                            />
                         </div>
 
-                        <div className="right flex flex-col gap-8 text-lg w-full lg:w-[60%] text-pretty keep-word">
+                        <div className="right flex flex-col gap-8 text-lg w-full lg:w-[50%] text-pretty keep-word">
 
                             <div className="text flex flex-col gap-4 ">
                                 <div className="header flex gap-16 items-center">
@@ -63,14 +73,28 @@ const FeaturedCard = ({ featuredList, listName }: { featuredList: FeaturedData[]
                                     </div>
 
                                 </div>
-                                <p>{featuredList[currFrIndex].description}</p>
+                                <ul className="list-disc list-inside">
+                                    {split_description.map((desc, index) => {
+                                        return <li key={index}><p >{desc}</p></li>
+                                    })}
+                                </ul>
+
+                                {/* <p>{featuredList[currFrIndex].description}
+
+                                </p> */}
                             </div>
 
-                            <div className=" flex gap-1">
-                                <button className="round-button-group w-12 h-12"></button>
-                                <button className="round-button-group w-12 h-12"></button>
-                                <button className="round-button-group w-12 h-12"></button>
-                            </div>
+                            {/* <div className=" flex gap-1">
+                                <button className="rounded-full w-12 h-12">
+                                    <GrInstall className="w-6 h-6" />
+                                </button>
+                                <button className="rounded-full w-12 h-12">
+                                    <PiBuildingApartmentBold className="w-6 h-6" />
+                                </button>
+                                <button className="rounded-full w-12 h-12">
+                                    <GrElevator className="w-6 h-6" />
+                                </button>
+                            </div> */}
                         </div>
 
                     </div>
@@ -83,20 +107,28 @@ const FeaturedCard = ({ featuredList, listName }: { featuredList: FeaturedData[]
                                 let src = feature.images[0].src
                                 let alt = feature.images[0].name
                                 return (
-                                    <button key={feature.id} onClick={() => setCurrFrIndex(index)}
-                                        className={`${active} round-button-group w-32 h-20 bg-center bg-cover bg-no-repeat`} style={{ background: `url(${src})` }}>
-                                    </button>
+                                    <div key={feature.id} >
+                                        <button onClick={() => setCurrFrIndex(index)}
+                                            className={`${active} round-button-group w-32 h-20 bg-right bg-cover bg-no-repeat`}
+                                            style={{ background: `url(${src})` }}>
+                                        </button>
+                                        <p className="text-xs text-center">{feature.title}</p>
+                                    </div>
                                 )
                             })}
                         </div>
 
                         <div className="center  round-button-group w-96 h-16 flex items-center justify-center">
-                            <Link href={''} className=""> View all <span className="">{listName}</span> </Link>
+                            <Link href={featuredList[currFrIndex].url} className=""> View Service Detail  </Link>
                         </div>
 
                         <div className="right flex items-center gap-8">
                             <h4>Download Catalog</h4>
-                            <button className="round-button-group w-32 h-11 bg-center" style={{ background: `url(${featuredList[0].catalog.thumbnail})` }}></button>
+                            <Link href={featuredList[0].catalog.src} target="_blank" className="w-32 h-32 bg-contain flex items-center justify-center"
+                            // style={{ background: `url(${featuredList[0].catalog.thumbnail})` }}
+                            >
+                                <Image src={featuredList[0].catalog.thumbnail} alt={featuredList[0].catalog.name} width={64} height={32} />
+                            </Link>
 
                         </div>
                     </div>

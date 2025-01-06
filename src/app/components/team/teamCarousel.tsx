@@ -25,17 +25,23 @@ const TeamCarousel: React.FC<PropType> = (props) => {
     } = usePrevNextButtons(embla_Api, slides.length)
     let currIndex = currentIndex;
     return (
-        <div className="">
+        <div className="py-12">
             <div className=" " ref={embla_Ref}>
-                <div className="flex -ml-[5.5%] ">
+                <div className="flex">
                     {slides.map((slide, index) => (
                         <div className="embla___slide flex flex-col items-center justify-center" key={slide.id}>
                             <div className="">{slide.title}</div>
-                            <Image src={slide.image} alt={slide.title}
-                                width={index === currIndex ? 400 : 150}
-                                height={index === currIndex ? 400 : 150}
-                                className='rounded-full'
-                            />
+                            <div className='h-[150px] w-[150px] rounded-full border-[1px] border-space overflow-hidden flex items-center justify-center'
+                                style={{ width: index === currIndex ? '240px' : '150px', height: index === currIndex ? '240px' : '150px' }}
+                            >
+                                <Image src={slide.image} alt={slide.title}
+                                    width={400}
+                                    height={400}
+                                    className=''
+                                    style={{ transform: slide.image === '/logo-transparent.png' ? 'scale(0.6)' : 'scale(1)' }}
+                                />
+                            </div>
+                            <p>{slide.name}</p>
                         </div>
                         // <TeamSlide key={slide.id} department={slide} index={index} currIndex={currIndex} />
                     ))}

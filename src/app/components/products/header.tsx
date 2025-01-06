@@ -12,7 +12,7 @@ export interface CardHeaderProps {
   variants?: { id: string; title: string }[];
   totalNumber?: number;
   bg?: string;
-  icons?: string[];
+  icons?: React.ReactNode[];
 }
 
 const CardHeader = (props: CardHeaderProps) => {
@@ -65,7 +65,7 @@ const ContentLayer = ({
   variants?: { id: string; title: string }[];
   description?: string;
   bg?: string;
-  icons?: string[];
+  icons?: React.ReactNode[];
 }) => (
   <div style={{ background: bg ? bg : "transparent" }}
     className="layer-2 header wrapper flex gap-12 flex-wrap justify-start z-10"
@@ -101,12 +101,17 @@ const ContentLayer = ({
 
         {icons && icons.length > 0 &&
           <div className="right icons flex flex-wrap gap-2 md:gap-4">
-            <Image src="/icons_animated/swing_door.gif" alt="seal" width={120} height={120} className="product_icon " />
+            {
+              icons.map((icon, index) => {
+                return <div key={index}>{icon}</div>
+              })
+            }
+            {/* <Image src="/icons_animated/swing_door.gif" alt="seal" width={120} height={120} className="product_icon " />
             <Image src="/icon/seal-question.svg" alt="seal" width={50} height={20} className="product_icon wiggle" />
             <Image src="/icon/seal-question.svg" alt="seal" width={50} height={20} className="product_icon wiggle" />
             <Image src="/icon/seal-question.svg" alt="seal" width={50} height={20} className="product_icon wiggle" />
             <Image src="/icon/seal-question.svg" alt="seal" width={50} height={20} className="product_icon wiggle" />
-            <Image src="/icon/seal-question.svg" alt="seal" width={50} height={20} className="product_icon wiggle" />
+            <Image src="/icon/seal-question.svg" alt="seal" width={50} height={20} className="product_icon wiggle" /> */}
           </div>}
       </div>
 

@@ -6,7 +6,7 @@ const TestimonialSlide = ({ testimonial }: { testimonial: Testimonial }) => {
         <div className="w-screen">
 
             <div className="top">
-                <h1>{testimonial.client}</h1>
+                <h5>{testimonial.client}</h5>
             </div>
             <div className="center">
                 <p>{testimonial.quote}</p>

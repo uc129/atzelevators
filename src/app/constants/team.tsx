@@ -17,6 +17,7 @@ export interface Department {
     id: string;
     title: string;
     image: string;
+    name?: string;
 }
 
 interface Departments {
@@ -26,40 +27,63 @@ interface Departments {
 
 
 export const Departments: Departments = {
+    founder: {
+        id: "founder",
+        title: "Founder",
+        // A  Jha
+        image: "/team/founder.png",
+        name: "Late Anil Kumar Jha",
+    },
     management: {
         id: "management",
+        // A Jha
         title: "Management",
-        image: "https://res.cloudinary.com/drqofmj2h/image/upload/v1706425681/illustrator/Asset_4_ini74q.svg",
+        image: "/team/md.jpg",
+        name: "Amrita Jha"
+    },
+    sales: {
+        id: "director",
+        title: "Director",
+        // N.K.Chaudhary
+        image: "/team/director.jpg",
+        name: "N.K.Chaudhary"
+    },
+
+    executive: {
+        id: "executive",
+        title: "Executive",
+        // A Vishal
+        image: "/team/ceo.jpg",
+        name: "Ambudhi Vishal"
     },
     erection: {
         id: "erection",
         title: "Erection",
-        image: "https://res.cloudinary.com/drqofmj2h/image/upload/v1706425681/illustrator/Asset_4_ini74q.svg",
-    },
-    executive: {
-        id: "executive",
-        title: "Executive",
-        image: "https://res.cloudinary.com/drqofmj2h/image/upload/v1706425681/illustrator/Asset_4_ini74q.svg",
+        // zia
+        image: "/logo-transparent.png",
+        name: "Zia Ul Haq Khan"
     },
     marketing: {
         id: "marketing",
         title: "Marketing",
-        image: "https://res.cloudinary.com/drqofmj2h/image/upload/v1706425681/illustrator/Asset_4_ini74q.svg",
+        //  A Vishal
+        image: "/logo-transparent.png",
+        name: "Rohan Kumar"
     },
-    sales: {
-        id: "sales",
-        title: "Sales",
-        image: "https://res.cloudinary.com/drqofmj2h/image/upload/v1706425681/illustrator/Asset_4_ini74q.svg",
-    },
+
     service: {
         id: "service",
         title: "Service",
-        image: "https://res.cloudinary.com/drqofmj2h/image/upload/v1706425681/illustrator/Asset_4_ini74q.svg",
+        // N Chy
+        image: "/logo-transparent.png",
+        name: "Niranjan Chaudhary"
     },
     support: {
         id: "support",
         title: "Support",
-        image: "https://res.cloudinary.com/drqofmj2h/image/upload/v1706425681/illustrator/Asset_4_ini74q.svg",
+        // Mahendra
+        image: "/logo-transparent.png",
+        name: "Mahendra Kumar Singh"
     },
 
 }

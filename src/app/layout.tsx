@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Afacad } from "next/font/google";
 import "./globals.css";
 import { ScrollObserver } from "./lib/scrollObserver";
-import NavigationBar from "./components/navbar";
 import { Sidebar } from "./components/sidebar";
 import GlassView from "./components/glass_view";
 import { Navbar } from "./navbar";
+import { NavigationBar } from "./navigation-bar";
+import { WindowProvider } from "./lib/window-context";
 
 const afacad = Afacad({ subsets: ["latin"], display: 'swap', adjustFontFallback: false });
 
@@ -31,10 +32,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={afacad.className}>
         <ScrollObserver>
-          <Navbar />
-          <div className="flex justify-between gap-1 wrapper">
-            {children}
-          </div>
+          <WindowProvider>
+            {/* <Navbar /> */}
+            <NavigationBar />
+            <main className="flex flex-col justify-between gap-1 wrapper">
+              {children}
+            </main>
+          </WindowProvider>
         </ScrollObserver>
       </body>
     </html>
