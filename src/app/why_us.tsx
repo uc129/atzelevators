@@ -25,10 +25,11 @@ const WhyUs = () => {
         <div className="left w-full xl:w-[45%]">
           <video
             autoPlay
-            className="grayscale"
+            className="grayscale pointer-events-none select-none"
             muted
             loop
             src="https://res.cloudinary.com/drqofmj2h/video/upload/v1725089229/atz-promo_yobsaj.mov"
+          // src="/videos/atz-video-2.mp4"
           >
             Video not supported!!
           </video>

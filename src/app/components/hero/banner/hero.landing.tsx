@@ -4,7 +4,7 @@ const LandingHero = () => {
 
     return (
         <section className="w-screen h-screen">
-            <video autoPlay muted loop className="w-full h-full object-cover">
+            <video autoPlay muted loop className="w-full h-full object-cover pointer-events-none select-none">
                 <source src="/videos/atz-promo.mov" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>

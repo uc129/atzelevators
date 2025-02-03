@@ -211,7 +211,7 @@ export const ProductsDetail: ProductDetailInterface[] = [
                 ],
                 price: 100000,
                 tagline: 'Large Capacity, Durable',
-                id: 'goods-elevator-1',
+                id: 'goods-elevator-2',
                 index: '01',
                 url: '/elevators/freight-goods-elevator'
             },

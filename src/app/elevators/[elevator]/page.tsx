@@ -22,7 +22,7 @@ export default function ElevatorPages() {
             {
                 product && (
                     <div>
-                        <h1>{product.title}</h1>
+                        <h1 className="text-5xl">{product.title}</h1>
                         <p>{product.description}</p>
                     </div>
                 )

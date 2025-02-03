@@ -44,13 +44,13 @@ export default function CompanyHistory() {
         <ContainerMd classes="py-16 flex flex-col gap-16 text-justify">
 
             <div className="flex flex-wrap ">
-                <div id='#history' className="min-w-[840px] max-w-[1024px]">
+                <div id='#history' className=" max-w-[1024px]">
                     <h1 className=" text-7xl mb-6  ">Our History</h1>
 
                     <div className=" items-center">
-                        <div className="col-span-3 flex flex-col gap-6  ">
+                        <div className="flex flex-col gap-6  ">
 
-                            <p className="]">ATZ Elevators, formerly known as Amba Tirupati Zetetic Engineering (P) Ltd., was founded in 1998 in Patna, Bihar, by the visionary Late Shri Anil Kumar Jha. With a mission to combine specialized knowledge with globally established standards, he laid a strong foundation for ATZ Elevators, instilling a belief in responsible innovation and the creation of groundbreaking technological solutions. Today, ATZ Elevators is a leading elevator company in India, with a presence in over 5 states and 20+ cities. We have a strong network of over 100 employees, 3000+ installations, and 50+ service centers across the country. Our commitment to quality, safety, and innovation has made us a trusted name in the elevator industry.
+                            <p className="">ATZ Elevators, formerly known as Amba Tirupati Zetetic Engineering (P) Ltd., was founded in 1998 in Patna, Bihar, by the visionary Late Shri Anil Kumar Jha. With a mission to combine specialized knowledge with globally established standards, he laid a strong foundation for ATZ Elevators, instilling a belief in responsible innovation and the creation of groundbreaking technological solutions. Today, ATZ Elevators is a leading elevator company in India, with a presence in over 5 states and 20+ cities. We have a strong network of over 100 employees, 3000+ installations, and 50+ service centers across the country. Our commitment to quality, safety, and innovation has made us a trusted name in the elevator industry.
                             </p>
                             <p>
                                 Over the years, ATZ Elevators has emerged as a trusted name in the elevator industry, delivering cutting-edge technology and superior products tailored to diverse projects across residential complexes, hospitals, government buildings, industrial facilities, and more. Our products are installed in prominent edifices across Bihar, Jharkhand, Odisha, West Bengal, and beyond.

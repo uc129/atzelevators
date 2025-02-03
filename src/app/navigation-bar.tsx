@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { BiChevronDown, BiMenu } from "react-icons/bi";
 import { useWindow } from "./lib/window-context";
 import { CgClose } from "react-icons/cg";
+import Image from "next/image";
 
 export interface NavDropdownChild {
     title: string;
@@ -432,7 +433,9 @@ export const DesktopNavBar = () => {
 
             <ul className="flex md:justify-between list-none items-center select-none px-12 flex-wrap">
 
-                <li><Link href="/">Home</Link></li>
+                <li><Link href="/">
+                    <Image src="/logo-transparent.png" alt="logo" width={80} height={100} />
+                </Link></li>
                 {navDropdownItems.map((navDropdownItem, index) => {
                     return (
                         // link
@@ -511,9 +514,13 @@ export const MobileNavbar = () => {
 
 
     return (
-        <div className={` mobile-nav px-8  ${openMenu ? 'h-screen' : 'h-16'}`} id="mobile-nav" style={{ zIndex: 1000 }}>
+        <div className={` mobile-nav px-4 py-2 sticky top-0 bg-baby_powder bg-opacity-80  
+            ${openMenu ? 'h-screen' : ''}`} id="mobile-nav"
+            style={{ zIndex: 1000, backdropFilter: 'blur(10px)' }}>
             <div onClick={toggleMenu} className="flex justify-between items-center p-4">
-                <Link className="text-lg" href='/'>ATZ ELevators</Link>
+                <Link className="text-lg" href='/'>
+                    <Image src="/logo-transparent.png" alt="logo" width={60} height={100} />
+                </Link>
                 {!openMenu ? <BiMenu size={46} /> : <CgClose size={46} />}
             </div>
             {openMenu && <ul className="list-none">
@@ -548,10 +555,20 @@ export const MobileNavbar = () => {
 export const NavigationBar = () => {
 
     const { isMobile, isSmallDesktop, isTablet } = useWindow();
+    const [small, setSmall] = useState(true);
 
-    if (isMobile || isSmallDesktop || isTablet) {
-        return <MobileNavbar />
+    useEffect(() => {
+        if (isMobile || isTablet || isSmallDesktop) {
+            setSmall(true);
+        }
+        else {
+            setSmall(false);
+        }
+    }, [isMobile, isSmallDesktop, isTablet])
+
+    if (!small) {
+        return <DesktopNavBar />
     }
-    return <DesktopNavBar />
+    return <MobileNavbar />
 
 }
